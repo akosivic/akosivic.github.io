@@ -6,6 +6,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@mdi/font": "^6.6.96",
     "bulma": "^0.9.3",
     "next": "latest",

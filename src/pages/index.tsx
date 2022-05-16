@@ -1,198 +1,155 @@
-import Image from 'next/image';
+import Footer from '../components/_footer';
+import NavBar from '../components/_navbar';
+import React from 'react';
+import Head from 'next/head';
 
+type skill = {
+  skill: string,
+  level: number
+};
+let max: number = 10;
+
+let professionalSkills: Array<skill> = [{ skill: 'C#.net', level: 7 }, { skill: 'JavaScript', level: 7 }, { skill: 'Bootstrap', level: 5 }, { skill: 'JQuery', level: 5 }, { skill: 'Unit Testing', level: 5 }, { skill: 'OOP', level: 7 }, { skill: 'SQL', level: 7 }, { skill: 'WPF', level: 7 }]
+let interpersonalSkills: Array<skill> = [{ skill: 'Leadership', level: 5 }, { skill: 'Scrum Master', level: 7 }]
 
 export default function Home() {
   return (
     <div>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            <img src="/images/akosivic-logo-long.png" />
-          </a>
+      <Head>
+        <title>Hello :)</title>
+        <link
+          href="/fonts/fa-regular-400.ttf"
+          rel="stylesheet"
+        />
+        <link
+          href="/fonts/fa-brands-400.ttf"
+          rel="stylesheet"
+        />
+        <link
+          href="/fonts/fa-solid-900.ttf"
+          rel="stylesheet"
+        />
+      </Head>
+      <NavBar />
+      <section className="hero is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <div className="title">
+              <h1 className="has-text-weight-bold	is-size-1">VIC SALAK</h1>
+            </div>
+            <div className="subtitle">
+              <p className="is-uppercase is-size-5"><h2>Software Engineer | Engineering Manager | Team Leader | Scrum master</h2></p>
+            </div>
+          </div>
 
-          {/* <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
         </div>
-
-        <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <a className="navbar-item">
-              Home
-            </a>
-
-            <a className="navbar-item">
-              Documentation
-            </a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">
-                  About
+      </section>
+      <section className="hero is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <p className="title">
+              Skills
+            </p>
+            <div className="columns is-gapless is-multiline">
+              <div className="column">
+                <a href='https://www.scrum-institute.org/badges/37410105264279'>
+                  <figure className="image is-128x128">
+                    <img src="images/scrum-institute.png" alt="scrum-institute" />
+                  </figure>
                 </a>
-                <a className="navbar-item">
-                  Jobs
+              </div>
+              <div className="column">
+                <a href=''>
+                  <figure className="image is-64x64">
+                    <img className="is-rounded" src="images/javascript.svg" alt="javascript" />
+                  </figure>
                 </a>
-                <a className="navbar-item">
-                  Contact
+              </div>
+              <div className="column">
+                <a href='https://react-bootstrap.github.io/'>
+                  <figure className="image is-64x64">
+                    <img className="is-rounded" src="images/bootstrap.svg" alt="bootstrap" />
+                  </figure>
                 </a>
-                <hr className="navbar-divider" />
-                <a className="navbar-item">
-                  Report an issue
+              </div>
+              <div className="column">
+                <a href='https://reactjs.org/'>
+                  <figure className="image is-64x64">
+                    <img className="is-rounded" src="images/react.svg" alt="reactjs" />
+                  </figure>
+                </a>
+              </div>
+              <div className="column">
+                <a href='https://docs.microsoft.com/en-us/dotnet/'>
+                  <figure className="image is-64x64">
+                    <img className="is-rounded" src="images/csharp.svg" alt="csharp" />
+                  </figure>
+                </a>
+              </div>
+              <div className="column">
+                <a href='https://www.microsoft.com/en-us/sql-server/sql-server-2019'>
+                  <figure className="image is-64x64">
+                    <img src="images/sqlserver.svg" alt="sqlserver" />
+                  </figure>
                 </a>
               </div>
             </div>
-          </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">
-                  Log in
-                </a>
-              </div>
-            </div>
-          </div> */}
-        </div>
-      </nav>
-      <div className="section ">
-        <div className="columns is-centered">
-          <div className="column is-one-fifth">
-            <div className="card is-info">
-              <div className="card-image">
-                <figure className="image is-square">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div className="card-content is-info">
-                <div className="media">
-                  <div className="media-left">
-                    <figure className="image is-1by1">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div className="media-content">
-                    <p className="title is-4">About Me</p>
-                    <p className="subtitle is-6">@johnsmith</p>
-                  </div>
+            <div className="columns">
+              <div className="column">
+                <div>
+                  <h1 className="has-text-weight-bold">Technical skills</h1>
                 </div>
-
-                <div className="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="column is-one-fifth">
-            <div className="card">
-              <div className="card-image">
-                <figure className="image is-1by1">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div className="card-content">
-                <div className="media">
-                  <div className="media-left">
-                    <figure className="image is-1by1">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
-                    </figure>
+                {professionalSkills.map((skills, idx) => (
+                  <div>
+                    <span key={idx} style={{ float: "left" }}>{skills.skill}</span>
+                    <progress className="progress" value={skills.level} max={max} />
                   </div>
-                  <div className="media-content">
-                    <p className="title is-4">Skills</p>
-                    <p className="subtitle is-6">@johnsmith</p>
-                  </div>
-                </div>
-
-                <div className="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                </div>
+                ))}
               </div>
-            </div>
-          </div>
-          <div className="column is-one-fifth">
-            <div className="card">
-              <div className="card-image">
-                <figure className="image is-1by1">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div className="card-content">
-                <div className="media">
-                  <div className="media-left">
-                    <figure className="image is-1by1">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
-                    </figure>
-                  </div>
-                  <div className="media-content">
-                    <p className="title is-4">Experience</p>
-                    <p className="subtitle is-6">@johnsmith</p>
-                  </div>
+              <div className="column">
+                <div>
+                  <h1 className="has-text-weight-bold">Leadership skills</h1>
                 </div>
-
-                <div className="content">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                  <a href="#">#css</a> <a href="#">#responsive</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="column is-one-fifth">
-            <div className="card">
-              <div className="card-image">
-                <figure className="image is-1by1">
-                  <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
-                </figure>
-              </div>
-              <div className="card-content">
-                <div className="media">
-                  <div className="media-content">
-                    <p className="title is-4">Contact Me</p>
-                    <p className="subtitle is-6">@johnsmith</p>
+                {interpersonalSkills.map((skills, idx) => (
+                  <div>
+                    <span key={idx} style={{ float: "left" }}>{skills.skill}</span>
+                    <progress className="progress" value={skills.level} max={max} />
                   </div>
-                </div>
-                {/* <div className="content">
-                  <h4>Let's connect or say hi!</h4>
-                </div> */}
-                <footer className="card-footer">
-                  <p className="card-footer-item">
-                    <span>
-                      <a href="https://twitter.com/codinghorror/status/506010907021828096">Github</a>
-                    </span>
-                  </p>
-                  <p className="card-footer-item">
-                    <span>
-                      <a href="#">Linked In</a>
-                    </span>
-                  </p>
-                </footer>
+                ))}
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <footer className="footer">
-        <div className="content has-text-centered">
-          <p>
-            <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-            is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-          </p>
+      </section>
+      <section className="hero is-fullheight-with-navbar">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <div className="title">
+              <h1>Contact</h1>
+            </div>
+            <div className="subtitle">
+              <div>
+                <a href="https://github.com/akosivic" rel="noopener noreferrer" target="_BLANK">
+                  <span className="icon">
+                    <i className="fab fa-github">
+                    </i>
+                  </span>
+                  Github
+                </a>
+              </div>
+              <div>
+                <a href="https://www.linkedin.com/in/vic-angelo-salak-69670733/" rel="noopener noreferrer" target="_BLANK">
+                  <span className="icon">
+                    <i className="fab fa-linkedin"></i>
+                  </span>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </div>
+      </section >
+      <Footer />
+    </div >
   )
 }
